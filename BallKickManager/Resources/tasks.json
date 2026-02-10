@@ -1,0 +1,490 @@
+[
+    {
+        "id": "T1",
+        "title": "Daily Dribbling Mastery",
+        "description": "A comprehensive routine to sharpen your ball control, improve close-quarters agility, and build the confidence to take on defenders.",
+        "difficulty": 1,
+        "image": "dribbling_drill",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Warm Up: Ball Mastery",
+                "description": "Begin with 5 minutes of light touches. Use the sole of your foot to roll the ball forward and backward, then side to side. Incorporate simple toe taps (alternating touches on top of the ball) and foundations (boxing the ball between your feet). The goal is to get 100+ touches and warm up your ankles.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Cone Weaving: Inside & Outside",
+                "description": "Set up 8-10 cones in a straight line, approx. 1 yard apart. Dribble through using ONLY your right foot, alternating between the inside and outside. Focus on sharp cuts. Turn around and repeat with ONLY your left foot. Keep your knees bent and center of gravity low.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Cone Weaving: Both Feet",
+                "description": "Now weave through the same cones using both feet. Push the ball creatively—inside-inside, outside-inside. Find a rhythm. If you touch a cone, reset and start that run again. Speed is secondary to precision here.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Freestyle Dribbling Box",
+                "description": "Mark a 5x5 yard square. Dribble freely inside, using feints, step-overs, and quick turns (Cruyff turn, drag-back). Imagine a defender is pressing you. Constantly change speed and direction. Never stop moving.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Speed Dribble",
+                "description": "Dribble at full sprint for 30 yards, then slow down to a walk. Repeat 5 times.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S6",
+                "title": "Cool Down",
+                "description": "Slow jog with the ball, gentle static stretching for calves and hamstrings.",
+                "duration": 120,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T2",
+        "title": "Power & Precision Shooting",
+        "description": "Develop the leg strength for long-range strikes and the accuracy for clinical finishing inside the box.",
+        "difficulty": 3,
+        "image": "kick_ball",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Dynamic Warm Up",
+                "description": "Leg swings (forward/back, side-to-side), high knees, and butt kicks. Jog for 2 mins to increase heart rate.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Target Practice: Corners",
+                "description": "Place the ball on the edge of the penalty box (18 yards). Aim specifically for the bottom corners. Strike the ball with your laces for power, but prioritize placement over pure force. Retrieve your ball and repeat. Alternate corners.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Power Strikes: Distance",
+                "description": "Move back to 25 yards. Focus on hitting the ball cleanly with your laces. Keep your head down, chest over the ball, and drive through it. The goal is a flat, hard trajectory. Don't worry about corners yet, just hit the target with power.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Wall Pass & Shoot",
+                "description": "Pass the ball against a wall (or rebounder), control the return with one touch, and shoot with the second. This simulates receiving a pass in a game and finishing quickly under pressure.",
+                "duration": 240,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Weak Foot Finishing",
+                "description": "Repeat the target practice but only using your weak foot. Start closer (12 yards) if needed.",
+                "duration": 240,
+                "isTimer": true
+            },
+            {
+                "id": "S6",
+                "title": "Stretching",
+                "description": "Focus on quads and hip flexors.",
+                "duration": 120,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T3",
+        "title": "Elite Agility Circuit",
+        "description": "A high-intensity session designed to improve foot speed, coordination, and explosive acceleration.",
+        "difficulty": 2,
+        "image": "agility_ladder",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Ladder Drill: 1-in-1-out",
+                "description": "Run through the agility ladder placing one foot in each box. Focus on high knees and driving your arms. Turn and sprint back to start.",
+                "duration": 120,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Ladder Drill: Icky Shuffle",
+                "description": "Perform the icky shuffle pattern (2 feet in, 1 foot out). Stay on balls of feet. Rhythm is key: in-in-out, in-in-out.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Ladder Drill: Lateral Steps",
+                "description": "Face sideways and move laterally through the ladder (2 feet in each box). Keep hips low.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Shuttle Runs (Suicides)",
+                "description": "Set cones at 0, 5, 10, and 15 yards. Sprint 0-5, back to 0. Sprint 0-10, back to 0. Sprint 0-15, back to 0. Rest 30s. Modification: Do this with a ball for dribbling fitness.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Box Drills",
+                "description": "Set 4 cones in a square. Sprint to top left, shuffle to top right, backpedal to bottom right, shuffle to bottom left.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S6",
+                "title": "Rest Interval",
+                "description": "Walk and deep breathe. Hydrate.",
+                "duration": 60,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T4",
+        "title": "Tactical Study Session",
+        "description": "Mental training to improve your game intelligence and decision making without physical exertion.",
+        "difficulty": 1,
+        "image": "soccer_strategy_board",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Video Analysis: Pro Player",
+                "description": "Watch 5 minutes of highlights from a player in your position (e.g., Modric for mid, Van Dijk for def). Focus ONLY on them, even when they don't have the ball. Where do they move? When do they scan?",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Positioning Visualization",
+                "description": "Close your eyes. Visualize a specific scenario: You are receiving the ball under pressure. See yourself checking your shoulder, taking a touch into space, and finding the open pass. Replay this success in your mind.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Set Piece Study",
+                "description": "Analyze free kick defenses. Where does the wall go? Where does the keeper stand? Draw diagrams if it helps.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Analysis: Team Shape",
+                "description": "Watch a wide-angle clip of a match. Pause and look at the defensive shape of the team without the ball. Are they compact? Are there gaps?",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Reflection",
+                "description": "Write down 3 things you learned from today's analysis.",
+                "duration": 120,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T5",
+        "title": "Endurance: Match Fitness",
+        "description": "Build the stamina required to perform at peak level for the full 90 minutes. Warning: High Intensity.",
+        "difficulty": 3,
+        "image": "training_field_night",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Warm Up Run",
+                "description": "Steady state running at 60% effort.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Interval Sprints (Set 1)",
+                "description": "Sprint at 100% effort for 30 seconds. Jog recovery for 30 seconds. Repeat this cycle 5 times.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Active Recovery",
+                "description": "Walk or very slow jog.",
+                "duration": 120,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Interval Sprints (Set 2)",
+                "description": "Sprint at 100% effort for 30 seconds. Jog recovery for 30 seconds. Repeat this cycle 5 times.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Long Run",
+                "description": "Steady running at 70% effort. Focus on breathing.",
+                "duration": 600,
+                "isTimer": true
+            },
+            {
+                "id": "S6",
+                "title": "Cool Down Walk",
+                "description": "Walk to bring heart rate down safely.",
+                "duration": 180,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T6",
+        "title": "First Touch Mastery",
+        "description": "Drills to ensure the ball sticks to your foot like glue, allowing you to play faster and more effectively.",
+        "difficulty": 2,
+        "image": "dribbling_drill_2",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Wall Rebounds (Inside Foot)",
+                "description": "Kick ball against a wall. Control the rebound with the inside of your foot, deadening it instantly. Alternate feet.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Aerial Control (Laces)",
+                "description": "Throw the ball high in the air. Control it as it drops using your laces (cushioning it). Try to keep it within a 1-yard radius.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Aerial Control (Thigh/Chest)",
+                "description": "Throw ball up. Control with thigh or chest, guiding it down to your feet smoothly. Don't let it bounce away.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Directional First Touch",
+                "description": "Pass against wall. Instead of stopping the ball, take your first touch into space (left or right) to set up a pass or shot.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Turn and Control",
+                "description": "Throw ball against wall, spin 180 degrees, locate ball, and control it on the turn.",
+                "duration": 180,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T7",
+        "title": "Defender's School: 1v1",
+        "description": "Techniques for winning the ball and delaying attackers in isolation situations.",
+        "difficulty": 2,
+        "image": "training_field_night",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Jockeying Stance Hold",
+                "description": "Get into defensive stance: knees bent, side-on, on balls of feet. Hold for 45s. Rest. Repeat 3 times. Burn those quads.",
+                "duration": 135,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Backward Shuffles",
+                "description": "Cone drill. Shuffle backwards in a zig-zag pattern, maintaining the side-on stance. Simulate retreating from an attacker.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Shadow Defending",
+                "description": "Partner required (or visualize). Partner dribbles at 50% speed. You retreat, mirroring their movement without tackling. Focus on maintaining distance.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Recovery Sprints",
+                "description": "Start flat on your stomach. On 'Go', get up and sprint 20 yards to a cone (simulating recovering after being beaten).",
+                "duration": 240,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Tackle Technique",
+                "description": "Practice the block tackle against a stationary ball. Step in, lock ankle, strong core contact.",
+                "duration": 180,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T8",
+        "title": "The Wall Ball Workout",
+        "description": "High-repetition passing drill you can do alone to build muscle memory.",
+        "difficulty": 1,
+        "image": "dribbling_drill_3",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "One Touch Passing (Right)",
+                "description": "Close range (2 yards). Rapid fire one-touch passes against wall using right foot only.",
+                "duration": 120,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "One Touch Passing (Left)",
+                "description": "Same as above, left foot only.",
+                "duration": 120,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "The V-Pass",
+                "description": "Pass with right, receive with left across body, pass with left, receive with right. Create a V shape.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Long Ping",
+                "description": "Move back to 20 yards. Loft the ball against the wall (if high enough) or target a spot. Focus on striking technique.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "First Time Volleys",
+                "description": "Throw ball at wall. Volley the rebound back at the wall with laces (side volley).",
+                "duration": 180,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T9",
+        "title": "Midfielder's Vision",
+        "description": "Scanning and awareness drills to help you run the game from the center.",
+        "difficulty": 2,
+        "image": "kick_ball_action",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "Shoulder Check Drill",
+                "description": "Pass against wall. BEFORE the ball returns to you, you must look over your shoulder. Control, pass, look. Build the habit.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Color Call",
+                "description": "Use colored cones behind you. Pass to wall, scan, partner holds up a color, you must call it out before controlling the ball.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "Turn and Pass",
+                "description": "Receiver stands in center. 4 servers (or targets) around. Receive from one, turn, pass to a different one designated by call.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Blind Spot Movement",
+                "description": "Practice checking into pockets of space. Jog, simulate checking away from a defender, receive on the half-turn.",
+                "duration": 240,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Study: De Bruyne",
+                "description": "Watch 5 mins of Kevin De Bruyne scanning. Note how many times he looks before receiving.",
+                "duration": 300,
+                "isTimer": true
+            }
+        ]
+    },
+    {
+        "id": "T10",
+        "title": "Goalkeeper Basics",
+        "description": "Fundamental handling and footwork for the guardian of the goal.",
+        "difficulty": 2,
+        "image": "penalty_spot",
+        "isCompleted": false,
+        "isFavorite": false,
+        "steps": [
+            {
+                "id": "S1",
+                "title": "The W Catch",
+                "description": "Partner throws ball fast at chest height. Catch using 'W' hand shape (thumbs almost touching). Elbows tucked.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S2",
+                "title": "Scoop Pickup",
+                "description": "Partner rolls ball on ground. Step forward, scoop ball into chest, bringing body over it to protect.",
+                "duration": 180,
+                "isTimer": true
+            },
+            {
+                "id": "S3",
+                "title": "High Ball Jump",
+                "description": "Partner throws high. Jump off one leg (driving other knee up for protection) and catch at highest point.",
+                "duration": 240,
+                "isTimer": true
+            },
+            {
+                "id": "S4",
+                "title": "Diving Low",
+                "description": "Start on knees. Partner rolls ball to side. Collapse and catch/parry. Progress to standing.",
+                "duration": 300,
+                "isTimer": true
+            },
+            {
+                "id": "S5",
+                "title": "Distribution: Throwing",
+                "description": "Practice the overarm throw (bowling) for accuracy over 30 yards.",
+                "duration": 240,
+                "isTimer": true
+            }
+        ]
+    }
+]

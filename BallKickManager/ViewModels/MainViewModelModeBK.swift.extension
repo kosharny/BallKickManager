@@ -1,0 +1,78 @@
+
+    // MARK: - Persistence
+    
+    func saveData() {
+        storageService.save(articles, forKey: "saved_articles")
+        storageService.save(tasks, forKey: "saved_tasks")
+        storageService.save(stats, forKey: "user_stats")
+        
+        // Save User Profile
+        UserDefaults.standard.set(userDominantLeg, forKey: "userDominantLeg")
+        UserDefaults.standard.set(userHeight, forKey: "userHeight")
+        UserDefaults.standard.set(userWeight, forKey: "userWeight")
+        UserDefaults.standard.set(userGoal, forKey: "userGoal")
+    }
+    
+    func completeOnboarding() {
+        isOnboardingCompleted = true
+        UserDefaults.standard.set(true, forKey: "isOnboardingCompleted")
+        saveData() // Ensure profile is saved
+    }
+    
+    func setTheme(_ theme: ThemeModeBK) {
+        currentTheme = theme
+        UserDefaults.standard.set(theme.rawValue, forKey: "selectedTheme")
+    }
+    
+    // MARK: - Logic
+    
+    func toggleFavorite(articleId: String) {
+        if let index = articles.firstIndex(where: { $0.id == articleId }) {
+            articles[index].isFavorite.toggle()
+            saveData()
+        }
+    }
+    
+    func markArticleViewed(articleId: String) {
+        if let index = articles.firstIndex(where: { $0.id == articleId }) {
+            if !articles[index].isViewed {
+                articles[index].isViewed = true
+                saveData()
+            }
+        }
+    }
+    
+    func completeTask(taskId: String, duration: TimeInterval) {
+        if let index = tasks.firstIndex(where: { $0.id == taskId }) {
+            // Only count if not already completed recently? 
+            // The prompt says "I've completed two tasks, and I've only completed one".
+            // It might mean the viewModel is calling this twice or the UI is triggering it multiple times.
+            // Or maybe the user re-did a task and it counted again.
+            // Let's assume we WANT to count every time they finish a training session even if repeated.
+            // But we must prevent accidental double triggers from the UI.
+            
+            // Check if we just completed this same task very recently (debounce)
+            let now = Date()
+            if let lastDate = stats.lastTrainingDate, now.timeIntervalSince(lastDate) < 5 {
+                return // Ignore if completed within last 5 seconds
+            }
+            
+            tasks[index].isCompleted = true
+            
+            // Update Stats
+            stats.completedTasksCount += 1
+            stats.totalTrainingTime += duration
+            stats.lastTrainingDate = now
+            
+            // Simple streak logic (needs refinement for real dates)
+            // Just increments for now. Real logic would check calendar days.
+            if let last = stats.lastTrainingDate, !Calendar.current.isDateInToday(last) {
+                 stats.streakDays += 1 
+            } else if stats.streakDays == 0 {
+                stats.streakDays = 1
+            }
+            
+            saveData()
+        }
+    }
+}

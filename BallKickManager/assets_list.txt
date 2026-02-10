@@ -1,0 +1,49 @@
+# Asset Documentation
+List of image assets required for the application. Add these to your Xcode Assets.xcassets catalog with the exact names listed below.
+
+## 1. Onboarding Images
+These images are displayed during the initial user setup.
+- **`onboarding_leg`**:
+  - *Context*: displayed on the "Dominant Leg" selection screen.
+  - *Description*: An illustration or photo of a football player kicking a ball or highlighting leg strength.
+  
+- **`onboarding_stats`**:
+  - *Context*: displayed on the "Body Stats" screen (Height/Weight).
+  - *Description*: An icon or illustration representing measurement, a scale, or athletic physique.
+  
+- **`onboarding_goal`**:
+  - *Context*: displayed on the "Main Goal" selection screen.
+  - *Description*: An image of a target, a goal net, or a trophy representing achievement.
+
+## 2. Content Images (Articles & Tasks)
+These images are used for Card headers and Detail views.
+- **`kick_ball_action`**:
+  - *Used In*: Article A1 (Knuckleball), Task T9 (Midfielder's Vision).
+  - *Description*: Dynamic shot of a player striking the ball.
+  
+- **`dribbling_drill`**:
+  - *Used In*: Task T1 (Dribbling), Task T6 (First Touch), Task T8 (Wall Ball).
+  - *Description*: Close-up of ball at feet or player navigating cones.
+  
+- **`tactical_setup`**:
+  - *Used In*: Article A8 (Through Ball), Article A11 (Gegenpressing).
+  - *Description*: A tactical view of a pitch, formation board, or coach pointing.
+  
+- **`soccer_strategy_board`**:
+  - *Used In*: Article A9 (Offside Trap).
+  - *Description*: A whiteboard with Xs and Os or player movement arrows.
+  
+- **`player_stretching`**:
+  - *Used In*: Article A7 (Active Recovery).
+  - *Description*: Player doing stretches or foam rolling.
+  
+- **`training_field_night`**:
+  - *Used In*: Article A10 (Captaincy), Task T7 (Defender's School).
+  - *Description*: A moody, lit stadium or training ground at night.
+  
+- **`penalty_spot`**:
+  - *Used In*: Task T10 (Goalkeeper Basics).
+  - *Description*: View from the penalty spot or goalkeeper's perspective.
+
+## 3. General
+- **`app_icon`**: The main application icon.
