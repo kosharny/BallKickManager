@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BallKickManagerApp: App {
+    @StateObject private var mainViewModel = MainViewModelModeBK()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashViewModeBK()
+                .environmentObject(mainViewModel)
+                .preferredColorScheme(.dark) // Enforce dark mode for the theme
         }
     }
 }
