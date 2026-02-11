@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FavoritesViewModeBK: View {
     @EnvironmentObject var viewModel: MainViewModelModeBK
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack {
@@ -9,7 +10,9 @@ struct FavoritesViewModeBK: View {
                 viewModel.currentTheme.backgroundGradient.ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    CustomHeaderModeBK(title: "Favorites", showSettings: true)
+                    CustomHeaderModeBK(title: "Favorites", showSettings: true, settingsAction: {
+                        showSettings = true
+                    })
                     
                     ScrollView {
                         VStack(spacing: 24) {
@@ -61,6 +64,9 @@ struct FavoritesViewModeBK: View {
                         .padding(.top)
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $showSettings) {
+                SettingsViewModeBK()
             }
             .onAppear {
                 viewModel.isTabBarHidden = false

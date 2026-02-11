@@ -12,6 +12,7 @@ class MainViewModelModeBK: ObservableObject {
     
     // User Profile
     @Published var userDominantLeg: String = "Right"
+    @Published var userBodyType: String = "Athletic"
     @Published var userHeight: String = ""
     @Published var userWeight: String = ""
     @Published var userGoal: String = "Technique"
@@ -98,6 +99,7 @@ class MainViewModelModeBK: ObservableObject {
         
         // Load User Profile
         userDominantLeg = UserDefaults.standard.string(forKey: "userDominantLeg") ?? "Right"
+        userBodyType = UserDefaults.standard.string(forKey: "userBodyType") ?? "Athletic"
         userHeight = UserDefaults.standard.string(forKey: "userHeight") ?? ""
         userWeight = UserDefaults.standard.string(forKey: "userWeight") ?? ""
         userGoal = UserDefaults.standard.string(forKey: "userGoal") ?? "Technique"
@@ -120,6 +122,7 @@ class MainViewModelModeBK: ObservableObject {
         storageService.save(stats, forKey: "user_stats")
         
         UserDefaults.standard.set(userDominantLeg, forKey: "userDominantLeg")
+        UserDefaults.standard.set(userBodyType, forKey: "userBodyType")
         UserDefaults.standard.set(userHeight, forKey: "userHeight")
         UserDefaults.standard.set(userWeight, forKey: "userWeight")
         UserDefaults.standard.set(userGoal, forKey: "userGoal")

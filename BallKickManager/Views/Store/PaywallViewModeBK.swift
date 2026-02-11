@@ -95,13 +95,7 @@ struct PaywallViewModeBK: View {
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(
-                                LinearGradient(
-                                    colors: [theme.mainColor, theme.mainColor.opacity(0.8)],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
+                            .background(theme.buttonGradient)
                             .cornerRadius(16)
                             .shadow(color: theme.mainColor.opacity(0.3), radius: 10)
                         }

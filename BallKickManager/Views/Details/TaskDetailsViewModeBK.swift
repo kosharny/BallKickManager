@@ -66,8 +66,8 @@ struct TaskDetailsViewModeBK: View {
                                 viewModel.toggleTaskFavorite(taskId: task.id)
                             }) {
                                 HStack {
-                                    Image(systemName: task.isFavorite ? "heart.fill" : "heart")
-                                        .foregroundColor(task.isFavorite ? .red : .gray)
+                                    Image(systemName: task.isFavorite ? "star.fill" : "star")
+                                        .foregroundColor(task.isFavorite ? viewModel.currentTheme.mainColor : .gray)
                                     Text(task.isFavorite ? "SAVED" : "SAVE TO FAVORITES")
                                         .font(.caption)
                                         .fontWeight(.bold)
@@ -135,7 +135,7 @@ struct TaskDetailsViewModeBK: View {
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(viewModel.currentTheme.mainColor)
+                            .background(viewModel.currentTheme.buttonGradient)
                             .cornerRadius(16)
                             .shadow(color: viewModel.currentTheme.mainColor.opacity(0.4), radius: 10, x: 0, y: 5)
                     }

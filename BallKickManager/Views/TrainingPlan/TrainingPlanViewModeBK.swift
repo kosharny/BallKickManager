@@ -26,8 +26,7 @@ struct TrainingPlanViewModeBK: View {
                             
                             HStack {
                                 StatBadge(icon: "figure.soccer", label: viewModel.userDominantLeg)
-                                StatBadge(icon: "scalemass", label: "\(viewModel.userWeight) kg")
-                                StatBadge(icon: "ruler", label: "\(viewModel.userHeight) cm")
+                                StatBadge(icon: "figure.arms.open", label: viewModel.userBodyType)
                             }
                         }
                         .padding()

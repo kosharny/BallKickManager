@@ -6,11 +6,11 @@ struct OnboardingViewModeBK: View {
     
     // Form States
     @State private var dominantLeg: String = "Right"
-    @State private var height: String = ""
-    @State private var weight: String = ""
+    @State private var bodyType: String = "Athletic"
     @State private var goal: String = "Technique"
     
     let legs = ["Right", "Left", "Both"]
+    let bodyTypes = ["Lean", "Athletic", "Muscular", "Stocky"]
     let goals = ["Technique", "Power", "Accuracy", "Stamina"]
     
     var body: some View {
@@ -30,21 +30,20 @@ struct OnboardingViewModeBK: View {
                 .padding()
                 .padding(.top, 40)
                 
-                Spacer()
-                
                 // Content based on step
-                VStack(spacing: 30) {
-                    if currenStep == 0 {
-                        LegSelectionView(selectedLeg: $dominantLeg, legs: legs)
-                    } else if currenStep == 1 {
-                        BodyStatsView(height: $height, weight: $weight)
-                    } else {
-                        GoalSelectionView(selectedGoal: $goal, goals: goals)
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 20) {
+                        if currenStep == 0 {
+                            LegSelectionView(selectedLeg: $dominantLeg, legs: legs)
+                        } else if currenStep == 1 {
+                            BodyTypeSelectionView(selectedBodyType: $bodyType, bodyTypes: bodyTypes)
+                        } else {
+                            GoalSelectionView(selectedGoal: $goal, goals: goals)
+                        }
                     }
+                    .padding(.vertical)
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 }
-                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                
-                Spacer()
                 
                 // Navigation Buttons
                 Button(action: nextStep) {
@@ -56,7 +55,7 @@ struct OnboardingViewModeBK: View {
                         .padding()
                         .background(
                             Capsule()
-                                .fill(isFormValid() ? viewModel.currentTheme.mainColor : Color.gray)
+                                .fill(isFormValid() ? AnyShapeStyle(viewModel.currentTheme.buttonGradient) : AnyShapeStyle(Color.gray))
                         )
                         .padding(.horizontal, 40)
                         .padding(.bottom, 40)
@@ -78,15 +77,14 @@ struct OnboardingViewModeBK: View {
     
     func isFormValid() -> Bool {
         if currenStep == 1 {
-            return !height.isEmpty && !weight.isEmpty
+            return !bodyType.isEmpty
         }
         return true
     }
     
     func saveAndFinish() {
         viewModel.userDominantLeg = dominantLeg
-        viewModel.userHeight = height
-        viewModel.userWeight = weight
+        viewModel.userBodyType = bodyType
         viewModel.userGoal = goal
         viewModel.completeOnboarding()
     }
@@ -132,7 +130,9 @@ struct LegSelectionView: View {
                     }
                     .foregroundColor(selectedLeg == leg ? .black : .white)
                     .padding()
-                    .background(selectedLeg == leg ? viewModel.currentTheme.mainColor : Color.white.opacity(0.1))
+                    .background(
+                        selectedLeg == leg ? AnyShapeStyle(viewModel.currentTheme.buttonGradient) : AnyShapeStyle(Color.white.opacity(0.1))
+                    )
                     .cornerRadius(12)
                 }
                 .padding(.horizontal, 40)
@@ -141,10 +141,10 @@ struct LegSelectionView: View {
     }
 }
 
-struct BodyStatsView: View {
+struct BodyTypeSelectionView: View {
     @EnvironmentObject var viewModel: MainViewModelModeBK
-    @Binding var height: String
-    @Binding var weight: String
+    @Binding var selectedBodyType: String
+    let bodyTypes: [String]
     
     var body: some View {
         VStack(spacing: 20) {
@@ -157,20 +157,36 @@ struct BodyStatsView: View {
                     .cornerRadius(20)
                     .shadow(color: viewModel.currentTheme.mainColor, radius: 10, x: 0, y: 5)
             } else {
-                Image(systemName: "ruler.fill")
+                Image(systemName: "figure.arms.open")
                     .font(.system(size: 80))
                     .foregroundColor(viewModel.currentTheme.mainColor)
             }
             
-            Text("BODY STATS")
+            Text("BODY TYPE")
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundColor(.white)
             
-            CustomTextField(placeholder: "Height (cm)", text: $height)
-            CustomTextField(placeholder: "Weight (kg)", text: $weight)
+            ForEach(bodyTypes, id: \.self) { type in
+                Button(action: { selectedBodyType = type }) {
+                    HStack {
+                        Text(type)
+                            .fontWeight(.bold)
+                        Spacer()
+                        if selectedBodyType == type {
+                            Image(systemName: "checkmark.circle.fill")
+                        }
+                    }
+                    .foregroundColor(selectedBodyType == type ? .black : .white)
+                    .padding()
+                    .background(
+                        selectedBodyType == type ? AnyShapeStyle(viewModel.currentTheme.buttonGradient) : AnyShapeStyle(Color.white.opacity(0.1))
+                    )
+                    .cornerRadius(12)
+                }
+                .padding(.horizontal, 40)
+            }
         }
-        .padding(.horizontal, 40)
     }
 }
 
@@ -212,7 +228,9 @@ struct GoalSelectionView: View {
                     }
                     .foregroundColor(selectedGoal == goal ? .black : .white)
                     .padding()
-                    .background(selectedGoal == goal ? viewModel.currentTheme.mainColor : Color.white.opacity(0.1))
+                    .background(
+                        selectedGoal == goal ? AnyShapeStyle(viewModel.currentTheme.buttonGradient) : AnyShapeStyle(Color.white.opacity(0.1))
+                    )
                     .cornerRadius(12)
                 }
                 .padding(.horizontal, 40)

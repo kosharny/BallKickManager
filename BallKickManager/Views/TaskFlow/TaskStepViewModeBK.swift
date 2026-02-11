@@ -34,58 +34,60 @@ struct TaskStepViewModeBK: View {
             }
             .padding(.horizontal)
             
-            // Content
-            VStack(spacing: 20) {
-                Text(step.title.uppercased())
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                
-                Text(step.description)
-                    .font(.title3)
-                    .foregroundColor(.white.opacity(0.8))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-            }
-            
-            // Timer
-            if step.isTimer {
-                ZStack {
-                    Circle()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 20)
+            // Scrollable Content
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 20) {
+                    Text(step.title.uppercased())
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
                     
-                    Circle()
-                        .trim(from: 0, to: CGFloat(timeRemaining / step.duration))
-                        .stroke(theme.mainColor, style: StrokeStyle(lineWidth: 20, lineCap: .round))
-                        .rotationEffect(.degrees(-90))
-                        .animation(.linear(duration: 1), value: timeRemaining)
+                    Text(step.description)
+                        .font(.title3)
+                        .foregroundColor(.white.opacity(0.8))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal)
                     
-                    VStack {
-                        Text("\(Int(timeRemaining))")
-                            .font(.system(size: 60, weight: .bold, design: .monospaced))
-                            .foregroundColor(.white)
-                        Text("SECONDS")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
+                    // Timer if applicable
+                    if step.isTimer {
+                        ZStack {
+                            Circle()
+                                .stroke(Color.white.opacity(0.1), lineWidth: 20)
+                            
+                            Circle()
+                                .trim(from: 0, to: CGFloat(timeRemaining / step.duration))
+                                .stroke(theme.mainColor, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                                .rotationEffect(.degrees(-90))
+                                .animation(.linear(duration: 1), value: timeRemaining)
+                            
+                            VStack {
+                                Text("\(Int(timeRemaining))")
+                                    .font(.system(size: 60, weight: .bold, design: .monospaced))
+                                    .foregroundColor(.white)
+                                Text("SECONDS")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .frame(width: 200, height: 200)
+                        .padding()
+                        .onReceive(timer) { _ in
+                            if isRunning && timeRemaining > 0 {
+                                timeRemaining -= 1
+                            } else if timeRemaining <= 0 {
+                                // Manual advance
+                                isRunning = false
+                            }
+                        }
                     }
                 }
-                .frame(width: 200, height: 200)
-                .padding()
-                .onReceive(timer) { _ in
-                    if isRunning && timeRemaining > 0 {
-                        timeRemaining -= 1
-                    } else if timeRemaining <= 0 {
-                        // Auto-advance or wait?
-                        // Usually wait for user confirmation or auto-advance.
-                        // Let's stick to manual advance for safety in exercises.
-                        isRunning = false
-                    }
-                }
+                .padding(.vertical)
             }
-            
-            Spacer()
             
             // Controls
             HStack(spacing: 20) {

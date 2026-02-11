@@ -3,6 +3,7 @@ import Charts // iOS 16+
 
 struct StatViewModeBK: View {
     @EnvironmentObject var viewModel: MainViewModelModeBK
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack {
@@ -10,7 +11,9 @@ struct StatViewModeBK: View {
                 viewModel.currentTheme.backgroundGradient.ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    CustomHeaderModeBK(title: "Statistics", showSettings: true)
+                    CustomHeaderModeBK(title: "Statistics", showSettings: true, settingsAction: {
+                        showSettings = true
+                    })
                     
                     ScrollView {
                         VStack(spacing: 24) {
@@ -57,6 +60,9 @@ struct StatViewModeBK: View {
                         .padding(.top)
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $showSettings) {
+                SettingsViewModeBK()
             }
             .onAppear {
                 viewModel.isTabBarHidden = false
