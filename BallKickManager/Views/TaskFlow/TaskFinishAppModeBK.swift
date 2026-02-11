@@ -57,7 +57,7 @@ struct TaskFinishAppModeBK: View {
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(viewModel.currentTheme.mainColor)
+                        .background(viewModel.currentTheme.buttonGradient)
                         .cornerRadius(16)
                         .shadow(color: viewModel.currentTheme.mainColor.opacity(0.4), radius: 10, x: 0, y: 5)
                 }

@@ -114,7 +114,7 @@ struct ArticleDetailsViewModeBK: View {
                                 .foregroundColor(.black)
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(viewModel.currentTheme.mainColor)
+                                .background(viewModel.currentTheme.buttonGradient)
                                 .cornerRadius(16)
                                 .opacity(article.isViewed ? 0.6 : 1.0)
                         }

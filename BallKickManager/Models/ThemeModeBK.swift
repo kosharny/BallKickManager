@@ -54,6 +54,14 @@ enum ThemeModeBK: String, CaseIterable, Codable {
              return LinearGradient(colors: [Color.black, Color.red.opacity(0.2)], startPoint: .top, endPoint: .bottom)
         }
     }
+    
+    var buttonGradient: LinearGradient {
+        return LinearGradient(
+            colors: [mainColor, mainColor.opacity(0.8)],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
 }
 
 extension ThemeModeBK: Identifiable {

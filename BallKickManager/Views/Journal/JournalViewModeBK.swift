@@ -2,6 +2,7 @@ import SwiftUI
 
 struct JournalViewModeBK: View {
     @EnvironmentObject var viewModel: MainViewModelModeBK
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack {
@@ -9,7 +10,9 @@ struct JournalViewModeBK: View {
                 viewModel.currentTheme.backgroundGradient.ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    CustomHeaderModeBK(title: "Journal", showSettings: true)
+                    CustomHeaderModeBK(title: "Journal", showSettings: true, settingsAction: {
+                        showSettings = true
+                    })
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 24) {
@@ -69,6 +72,9 @@ struct JournalViewModeBK: View {
                         .padding(.top)
                     }
                 }
+            }
+            .fullScreenCover(isPresented: $showSettings) {
+                SettingsViewModeBK()
             }
             .onAppear {
                 viewModel.isTabBarHidden = false
